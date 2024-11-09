@@ -1,9 +1,6 @@
 import discord
 from discord.ext import commands
-import json
-
-with open('config.json') as f:
-    config = json.load(f)
+from config import *
 
 intents = discord.Intents.default()
 intents.typing = False
@@ -22,4 +19,4 @@ for cog in cogs:
 async def on_ready():
     print(f'{bot.user} has connected to Discord!')
 
-bot.run(config['TOKEN'])
+bot.run(token)
